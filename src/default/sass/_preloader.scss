@@ -1,0 +1,40 @@
+.preloader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	background: linear-gradient(89deg, #404040, #161616, #404040);
+	background-size: 600% 600%;
+
+	-webkit-animation: scrollGradient 46s ease infinite;
+	-moz-animation: scrollGradient 46s ease infinite;
+	animation: scrollGradient 46s ease infinite;
+
+	@-webkit-keyframes scrollGradient {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 51%}
+			100%{background-position:0% 50%}
+	}
+	@-moz-keyframes scrollGradient {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 51%}
+			100%{background-position:0% 50%}
+	}
+	@keyframes scrollGradient {
+			0%{background-position:0% 50%}
+			50%{background-position:100% 51%}
+			100%{background-position:0% 50%}
+	}
+}
+
+body.onlogin {
+	overflow: hidden;
+}
+body.loading {
+	overflow: hidden;
+}
