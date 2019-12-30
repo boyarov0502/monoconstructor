@@ -1,0 +1,275 @@
+// **header-1_blue**
+// 
+.header {
+  width: 100%;
+  height: 3rem;
+  background: $white_gradient;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+  }
+
+  &-logo {
+    display: flex;
+  }
+}
+
+@media screen and ( min-width: 1297px ) {
+  .header {
+    &-logo {
+      @include Fl-2;
+    }
+  }
+}
+
+@media screen and ( max-width: 1296px ) {
+  .header {
+    &-menu {
+      order: 1;
+    }
+
+    &-logo {
+      order: 2;
+    }
+  }
+}
+
+@media screen and ( min-width: 696px ) and ( max-width: 1296px ) {
+  .header {
+    &-menu {
+      @include Fl-1;
+      margin-right: 2rem;
+      & > .menu {
+        width: 3rem;
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 695px ) {
+  .header {
+    &-menu {
+      margin-right: 1rem;
+    }
+  }
+}
+  
+
+// **logo**
+// 
+.logo {
+  &-image {
+    width: 10rem;
+  }
+}
+
+
+// **menu**
+// 
+.menu {
+  &-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: background 150ms linear, box-shadow 150ms linear;
+  }
+
+  &-wrap {
+    list-style-type: none;
+  }
+
+  &-link {
+    @include Button-m;
+    color: $black_7;
+    text-decoration: none;
+    transition: color 150ms;
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+@media screen and ( min-width: 1297px ) {
+  .menu {
+    &-wrap {
+      display: flex !important;
+      align-items: center;
+      height: 3rem;
+    }
+
+    &-list {
+      margin: 0 1rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 1296px ) {
+  .menu {
+    position: relative;
+
+    &-button {
+      display: flex;
+      background: transparent;
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);        
+      }
+      &:active,&.active {
+        background: $white_gradient;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25) inset;
+      }
+    }
+
+    &-icon {
+      &:before {
+        color: $black;
+      }
+    }
+
+    &-wrap {
+      display: none;
+      width: 13rem;
+      padding: 1rem;
+      background: $white_gradient;
+      box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.2);
+      position: absolute;
+      top: 3rem;
+      left: -1.25rem;
+      user-select: none;
+    }
+
+    &-list {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &-link {
+      display: block;
+      padding-bottom: 0.4rem;
+      border-bottom: 0.0625rem solid $black_7;
+      font-weight: 400;
+      transition: color 150ms, border-color 150ms;
+      &:hover {
+        color: $black;
+        border-color: $black;
+      }
+    }
+  }
+}
+
+@media screen and ( max-width: 695px ) {
+  .menu {
+    &-button {
+      background: $white_gradient;
+      &:hover {
+        background: rgba(255, 253, 247, 0.9);
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
+      }
+      &:active,&.active {
+        background: $white_gradient;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.35) inset;
+      }
+    }
+      
+    &-icon {
+      &:before {
+        color: $white_gradient;
+      }
+    }
+  }
+}
+
+// **phone**
+// 
+.phone {
+  display: flex;
+  align-items: center;
+
+  &-button {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    transition: background 150ms linear, box-shadow 150ms linear;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25);
+    }
+    &:active {
+      background: $white_gradient;
+      box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.25) inset;
+    }
+  }
+
+  &-icon {
+    font-size: 1.625rem;
+    &:before {
+      color: $black_7;
+    }
+  }
+
+  &-link {
+    display: inline;
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+    color: $black_7;
+    text-decoration: none;
+    transition: color 150ms;
+    &:hover {
+      color: $black;
+    }
+    &:active {
+      color: $black_4;
+    }
+  }
+}
+
+@media screen and ( min-width: 696px ) {
+  .phone {
+    @include Fl-2;
+    justify-content: flex-end;
+  }
+}
+
+@media screen and ( max-width: 695px ) {
+  .phone {
+    width: 3rem;
+    height: 3rem;
+
+    &-button {
+      display: flex;
+    }
+
+    &-link {
+      display: none;
+
+    }
+  }
+}
